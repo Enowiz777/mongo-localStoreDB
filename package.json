@@ -1,0 +1,22 @@
+{
+  "name": "grocery-data",
+  "version": "1.0.0",
+  "description": "stores grocery data to compare files.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Enowiz777/grocery-data.git"
+  },
+  "scripts": {
+    "win": "node index.js"
+  },
+  "author": "Enoch Park",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Enowiz777/grocery-data/issues"
+  },
+  "homepage": "https://github.com/Enowiz777/grocery-data#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
