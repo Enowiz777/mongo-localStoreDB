@@ -42,7 +42,56 @@ npm i will install everything from the package.json because package.json indicat
 
 - make sure to save package.json
 
-6. 
+6. Babel
+https://babeljs.io/
+
+- We use JavaScript only NodeJS understands or use Babel to compile the sexy javascript.
+- In a nutshell, Babel will translate from the newest Javascript language into the browser compatible javascript.
+- Look at the page that shows you how to install Babel. 
+Steps:
+
+1. Run below
+```
+npm install --save-dev @babel/core
+```
+- The babel gets saved under developer dependencies
+- You will see babel in the package.json.
+2. Create a config file.
+
+```
+npm install @babel/preset-env --save-dev
 
 
+```
+- Create a file called 'babel.config.json' in the root. 
+- Add below to the babel.config.json file.
 
+```
+{
+  "presets": ["@babel/preset-env"]
+}
+```
+- preset is the big set of plugins. preset/env is a smart preset that allows us to use the latest javascript. We have one for react and typescripts.
+
+
+7. Nodemon
+
+- Usage - use babel from javascript? We are going to use the script to do that for us. 
+- Select Nodemon instruction on the website
+https://babeljs.io/setup#installation
+
+Install @babel/node
+```
+npm install @babel/node --save-dev
+```
+
+- Nodemon can watch the changes and run the app or incorporate changes. 
+
+a. Install Nodemon
+```
+npm i nodemon --save-dev
+```
+
+b. After install, add it to the script
+
+Result: everytime you change the index.js, nodemon detects the change and apply update on the page.
