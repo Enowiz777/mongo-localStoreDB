@@ -99,3 +99,44 @@ https://babeljs.io/setup#installation
 
   Result: everytime you change the index.js, nodemon detects the change and apply update on the page.
 
+8. First Server
+
+- File organizaiton: 
+Steps:
+1. Create the main folder called src.
+2. If you get an error, you need to change the filepath on the package.json.
+3. Change index.js to server.js
+4. Write server.js
+```js
+// looking for express in the node modules folder.
+import express from "express";
+
+
+```
+*What is server?*
+- A machine waiting to respond to requests.
+- 24/7 operational.
+- What port that the server is going to listen to. We need to state the port because the computer has many ports that are like doors.
+- ctrl+c will kill the server.
+- when you go to the port 4000 -> Localhost:4000 you get an error. 
+
+```js
+
+// use express server
+
+//const express = require("express");
+// new version
+import express from "express";
+
+
+const app = express();
+
+const handleListening = () => console.log("Server listening on port 4000"
+);
+
+// high number ports are available. The, run the callback called handleListening
+app.listen(4000, handleListening);
+
+
+
+```

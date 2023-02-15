@@ -9,7 +9,7 @@
   },
   "scripts": {
     "win": "node index.js",
-    "dev": "nodemon --exec babel-node index.js"
+    "dev": "nodemon --exec babel-node src/server.js"
   },
   "author": "Enoch Park",
   "license": "MIT",
