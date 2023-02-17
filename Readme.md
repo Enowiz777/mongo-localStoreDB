@@ -140,3 +140,22 @@ app.listen(4000, handleListening);
 
 
 ```
+
+9. GET requests
+
+- Google.com is same as google.com/
+- / means the root or the first page of the website.
+- 
+*What is HTTP?*
+- You are seeing https, remove s you get http. 
+- http is how we talk to a server. It is the most solid one to communicate.
+- When users are going into the server, the browser is making HTTP request for you. 
+- HTTP has many methods. GET - get a page. 
+- You make the website come to you via an internet browser. 
+- Browser is requesting for a website and it is getting the page for you. 
+- 
+
+*Teach server how to respond to a request?*
+- Create express server, you can write code. 
+- When you get a GET request, you need to provide a response. 
+
