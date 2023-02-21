@@ -159,3 +159,17 @@ app.listen(4000, handleListening);
 - Create express server, you can write code. 
 - When you get a GET request, you need to provide a response. 
 
+- create 
+
+20230220- 
+
+Middleware is a software in the middle.
+- Middleware needs to have the next() third argument so that next funciton can be triggered. 
+- If you return a value, it stops.
+- app.get(); app.use() - create global middleware.
+
+- Review:
+  - Script allows you to run the bash script with a shorter code. Script is in a package.json file. 
+  - Dependencies: packages that your project needs to run. 
+  - npm install will look at the versions listed in package.json.lock and install on the PC so that the app can run using those dependencies.
+  
