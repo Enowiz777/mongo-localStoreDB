@@ -4,21 +4,17 @@
 //const express = require("express");
 // new version
 import express from "express";
+// import Mogran
+import morgan from "morgan";
+
+import globalRouter from "./globalRouter";
 
 const PORT = 4000;
 const app = express();
+const logger = morgan("dev");
+app.use(logger);
 
-const logger = (req, res, next) => {
-  console.log(`${req.method} ${req.url}`);
-  next();
-};
-
-const handleHome = (req, res) => {
-  return res.send("I love middlewares");
-};
-
-// when somebody sends a GET request to a root, run a function or a callback function.
-app.get("/", logger, handleHome);
+app.use("/", globalRouter);
 
 const handleListening = () => console.log(
     `Server listening on port http://localhost:${PORT}`

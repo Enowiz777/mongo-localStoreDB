@@ -173,3 +173,74 @@ Middleware is a software in the middle.
   - Dependencies: packages that your project needs to run. 
   - npm install will look at the versions listed in package.json.lock and install on the PC so that the app can run using those dependencies.
   
+## Server Recap
+
+- Server: a computer that is always turned on and that is connected to the internet, listening to the requests. 
+- Your browser makes a request to the server when you enter an URL or others. 
+- When we import express server w/o node_module/, it knows that we are looking for an express application within the node_modules folder. 
+- 
+
+## External Middleware
+
+- Morgan: request logger for node.js - 
+- Install morgan
+```js
+npm i morgan
+```
+- https://www.npmjs.com/package/morgan
+- Morgan functions return middleware. 
+- Create a logger middleware. 
+- When you use a morgan, it has a handy default logger information.
+- morgan("combined"): shows different information.
+- 
+
+# Routers
+
+*What is routers?*
+- Routing refers to how an application’s endpoints (URIs) respond to client requests. 
+
+- A router object is an isolated instance of middleware and routes. You can think of it as "mini-application," capable only of performing middleware and routing functions. Every Express application has a built-in app router.
+
+- Create routes:
+
+1. SQL 
+- export, import to excel file. 
+- basic CRUD
+- I can first create CRUD in different pages. 
+- /Create, /Read, /Update, /Delete.
+- logo of the grocery store should be grabbed. 
+- 
+
+- Create a global router. 
+- Create a login page -> For demonstration, you don't need this. 
+- 
+
+*How do you create a route using a router.*
+
+```js
+import express from "express";
+import morgan from "morgan";
+const PORT = 4000;
+
+const app = express();
+const logger = morgan("dev");
+app.use(logger);
+
+
+// You can create a second layer.
+app.use("/", globalRouter);
+
+
+const handleListening = () =>
+  console.log(`✅ Server listenting on port http://localhost:${PORT} 🚀`);
+       
+app.listen(PORT, handleListening);
+```
+
+- If you go to /videos, it will not display the page because videoRouter is not designed to display a page.
+- 
+
+# How do you clean the code?
+
+- seperate routers with controllers because the logics may get bigger later with controllers. 
+- 
