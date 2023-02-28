@@ -1,9 +1,8 @@
 import express from "express";
-
+import { handleHome, handleTest } from "./globalController";
 const globalRouter = express.Router();
 
-const handleHome = (req, res) => res.send("Home");
-const handleTest = (req, res) => res.send("Test");
+
 
 globalRouter.get("/", handleHome);
 globalRouter.get("/test", handleTest);

@@ -244,3 +244,61 @@ app.listen(PORT, handleListening);
 
 - seperate routers with controllers because the logics may get bigger later with controllers. 
 - 
+
+20230227
+
+## 1. Router Recap
+- Routers is how we group urls together. 
+- 
+
+## 2. Architecture Recap
+- Before you import, you have to export. 
+- You can rename the module as you import by using 
+```
+import express from "express";
+```
+- *How do you seperate the controller in another file?*
+globalRouter
+```js
+import express from "express";
+import { handleHome, handleTest } from "./globalController";
+const globalRouter = express.Router();
+
+
+
+globalRouter.get("/", handleHome);
+globalRouter.get("/test", handleTest);
+
+export default globalRouter;
+```
+
+globalController
+```js
+export const handleHome = (req, res) => res.send("Home");
+export const handleTest = (req, res) => res.send("Test");
+```
+- open the object with the brackets and select the function that you want to call. 
+
+## 3. URL parameters
+
+- enowiz.com/name
+- This is a parameter. 
+- You can make the nodeJS create the parameter for each ID by putting :id. 
+- Parameters allows you to put varialbe that you have access. 
+- : these are recognize as variable. 
+- When you console.log (req.params), you will get the result when you put the IDs. (result in ID.)
+- /:id: usually this page will display a detailed data. 
+- The order that you put in the Router is important because the code work from top to bottom. Whatever that is on the top will be checked first and then later the bottom items will be checked. 
+- However, if you put :id, they can put in the characters instead of the number. you can check that and screen the wrong use of URL. 
+
+*How do you screen wrong data request from the user?*
+- We can use regex to vet this. 
+- There are default route path in the documentation.
+express.com/en/guide/routing.html
+
+- Regex will exist in every programming language and this is usually is to set the parameter. 
+- /(nico\w+)/g
+- All the words that contain nico and any characters afterwards. 
+- All digits?
+- /:id(\\d+): This is only going to be digits.
+- 
