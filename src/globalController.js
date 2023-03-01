@@ -1,2 +1,2 @@
-export const handleHome = (req, res) => res.send("Home");
-export const handleTest = (req, res) => res.send("Test");
+export const handleHome = (req, res) => res.render("home");
+export const handleTest = (req, res) => res.render("test");

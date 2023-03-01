@@ -14,6 +14,10 @@ const app = express();
 const logger = morgan("dev");
 app.use(logger);
 
+// use pug as a view engine.
+app.set("view engine", "pug");
+app.set("views", process.cwd() + "/src/views");
+app.use(logger);
 app.use("/", globalRouter);
 
 const handleListening = () => console.log(

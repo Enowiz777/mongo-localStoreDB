@@ -302,3 +302,51 @@ express.com/en/guide/routing.html
 - All digits?
 - /:id(\\d+): This is only going to be digits.
 - 
+
+## 4. Templates
+
+- We can literally send the string of HTML and the browser will get the html
+```
+export const trending = (req, res) => res.send("<h1>Hello!</h1>);
+```
+- We are going to have a body so this would be inefficient
+- It would also be too long.
+- Also, giving the same code or HTML to return would be inefficient as well because there are some codes that overlap. 
+- Install pug
+https://www.npmjs.com/package/pug
+
+
+```
+```
+- You have to state that you want to use a pug as a helper. 
+- View Engine: pug
+https://expressjs.com/ko/guide/using-template-engines.html
+
+
+
+- Create a pug file. 
+- View: array of directory that express will use. 
+- 
+Application Settings (Express어플리케이션 설정)
+https://expressjs.com/ko/4x/api.html#app.use
+
+- Create the views folder in the source. 
+- Pug will turn the file into the html.
+
+- Alternatives:
+https://blog.logrocket.com/top-express-js-template-engines-for-dynamic-html-pages/
+
+Note: how do you console.log cwd() current working directory?
+```js
+console.log(process.cwd());
+```
+
+How do you change the directory?
+- Change the default value.
+
+## 5. Partials
+- Move the Views outside of source because that is the cwd().
+- If you want to put the code all inside the src(), you can change default location. 
+
+- You can create a seperate file called partial that literally stores the partial code. 
+- Render: pug will execute all javascript and then provide the result to the user. 
