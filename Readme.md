@@ -350,3 +350,55 @@ How do you change the directory?
 
 - You can create a seperate file called partial that literally stores the partial code. 
 - Render: pug will execute all javascript and then provide the result to the user. 
+
+## 6. Extending HTML
+
+- We still have three files with the same structure other than the footers. 
+- There are repeated codes. With the concept of inheritance, you don't have to write the same code over and over. 
+- We can create a base.pug and extend that template over all other pages 
+- 
+base.pug
+```pug
+doctype html
+html(lang="ko")
+    head
+        block head
+    body
+        block content
+    include partials/footer.pug
+```
+
+home.pug
+```pug
+extends base.pug
+
+block head
+    title Home | Wetube
+
+block content
+    h1 Home!
+```
+
+- The concept of block is the space that we can put things inside. 
+- First, create a block and add contents inside the block on the individual pages. 
+- You can look at the pug documentaiton. ;
+
+## Variables to Templates
+
+- Variables
+- We can put the javascript code and add it to the HTML template.
+- If you include #{}.
+- base.pug includes partial
+- home.pug extends base.pug
+- home.pug can edit the block content.
+- .render can send the variable to the page or to the HTML template.
+- For now globalController.js is sending the page title to the page. 
+- 
+
+## MVP Styles
+
+- We are going to use the MVP styles to work on the CSS
+- I can use the Bootstrap instead. 
+- How do I import Bootstrap or incorporate Bootstrap into my code. 
+
+https://getbootstrap.com/

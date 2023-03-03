@@ -9,6 +9,9 @@ import morgan from "morgan";
 
 import globalRouter from "./globalRouter";
 
+// import Bootstrap
+// import bootstrap from 'bootstrap';
+
 const PORT = 4000;
 const app = express();
 const logger = morgan("dev");

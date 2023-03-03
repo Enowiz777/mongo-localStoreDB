@@ -1,7 +1,10 @@
-doctype html
-html(lang="ko")
-    head
-        title Wetube
-    body
-        h1 Welcome to Wetube
-    include partials/footer.pug
+extends base.pug
+
+block head
+    title #{pageTitle} | Wetube
+block content
+    h1 Home!
+    .btn-group(role='group' aria-label='Basic example')
+        button.btn.btn-primary(type='button') Left
+        button.btn.btn-primary(type='button') Middle
+        button.btn.btn-primary(type='button') Right
