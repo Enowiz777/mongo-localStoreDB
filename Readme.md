@@ -402,3 +402,93 @@ block content
 - How do I import Bootstrap or incorporate Bootstrap into my code. 
 
 https://getbootstrap.com/
+
+- Use Bootstrap and use a translater to convert from HTML to pug
+
+https://html-to-pug.com/
+
+- Can you pass the var without using pug.
+Yes, but the syntax is not pretty
+
+
+https://stackoverflow.com/questions/37991995/passing-a-variable-from-node-js-to-html
+
+## Conditionals
+
+- conditional is needed when I want to only show data to certain users only. 
+
+- To test this, create a fakeDB
+
+controller.js
+```js
+const fakeUser = {
+  username: "Nicolas",
+  loggedIn: false,
+};
+
+export const trending = (req, res) =>
+  res.render("home", { pageTitle: "Home", fakeUser });
+```
+
+base.pug
+```pug
+        header
+            if fakeUser.loggedIn
+                small Hello #{fakeUser.username}
+            nav
+
+                ul
+                    if fakeUser.loggedIn
+                        li 
+                            a(href="/logout") Log out
+                    else
+                        li 
+                            a(href="/login") Login
+            h1=pageTitle
+```
+- only shows the username if the user is logged in.
+
+## Iteration
+
+- show list of elements. 
+- in case where the array is being sent. 
+- 
+Steps:
+
+1. Create an fake db. 
+2. Iterate each db and display element data.
+
+Controller:
+```js
+export const trending = (req, res) => {
+  const videos = [
+    {
+      title: "Hello",
+    },
+    {
+      title: "Video #2",
+    },
+    {
+      title: "Whatsup",
+    },
+  ];
+  return res.render("home", { pageTitle: "Home", videos });
+```
+
+home.pug
+```pug
+extends base.pug
+block content
+
+    h2 Welcome here you will see the trending videos
+
+    ul
+
+        each video in videos
+
+            li=video
+
+        else
+
+            li Sorry nothing found.
+```
