@@ -492,3 +492,44 @@ block content
 
             li Sorry nothing found.
 ```
+
+## 5.9 Mixins
+
+ - mixin is like a partial but it is a partial that receives data. 
+ - Samd shape but different data. We use partial. 
+ - mixins are like smart partial.
+ 
+src/views/home.pug
+```js
+extends base
+include mixins/video
+
+block content
+    h2 Welcome here you will see the trending videos
+    each potato in videos
+        +video(potato)
+    else
+        li Sorry nothing found.
+ ```
+
+src/views/mixins/video.pug
+```js
+
+mixin video(info)
+    div
+        h4=info.title
+        ul
+            li #{info.rating}/5.
+            li #{info.comments} comments.
+            li Posted #{info.createdAt}.
+            li #{info.views} views.
+```
+
+- This is a component that can be used everywhere. 
+- 
+## 5.0 Array DB
+
+- Learn how to do post data to the backend.
+- Post and save to the db. 
+- listing - I want to see only one data. 
+- 
