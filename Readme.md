@@ -532,4 +532,21 @@ mixin video(info)
 - Learn how to do post data to the backend.
 - Post and save to the db. 
 - listing - I want to see only one data. 
-- 
+
+*How do you send data to the backend?*
+
+## 6.7 Intro to mongo DB
+
+- Use MongoDB - general purpose, document-based, distributed databased. 
+- MongoDB is good because it is document-based. 
+- Most SQL are row-based like excel sheet and they have many rules. 
+- This database think like object. 
+- DB thinks like an object too. 
+- It is similar to .json. 
+- You can put the DB in the cloud and make it fast etc. 
+- MongoDB.com - server - installation - Community Edition, Enterprise and others. 
+
+*How do you install MongoDB?*
+
+- They make MongoDB for free and offer a better service. 
+- Install MongoDB using .msi
