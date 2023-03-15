@@ -1,3 +1,6 @@
+// connect to mongo
+import "./db";
+import "./models/item.js";
 
 // use express server
 

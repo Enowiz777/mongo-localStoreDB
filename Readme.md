@@ -550,3 +550,88 @@ mixin video(info)
 
 - They make MongoDB for free and offer a better service. 
 - Install MongoDB using .msi
+
+## 6.8 Connecting to Mongo
+
+- Mongoose: the bridge between node.js to MongoDB. 
+- Easy to use. 
+- This is an important package for us. 
+- We can talk to Mongo using the Javascript. 
+https://mongoosejs.com/
+
+- To test your MongoDB installation. 
+- You type the word "mongod", you should be getting bunch of messages. 
+
+*follow instruction to install*
+- Go type 'mongo' which will connect into the mongo shell.
+- You can talk to mongoDB. you can write commands to modify the mongo db. 
+- help: all the help commands will show. 
+- show dbs 
+- You can interact with mongodb directly. 
+- The point is, you should be able to access mongod and mongo 
+- Make sure that you can run the commands. 
+- First, look at the github. 
+- npm i mongoose
+
+- Create a new file called database.
+db.js
+
+- type mongo in the command to get the url of your dbs.
+
+db.js
+
+```js
+import mongoose from "mongoose";
+
+// connect to the local mongo dbs.
+mongoose.connect("mongodb://127.0.0.1:27017/wetube",
+{
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
+// import the file.
+```
+
+## 6.9 CRUD Introduction
+
+- You have to plan how your dabase will look like. 
+- CRUD: CREATE, READ, UPDATE, AND DELETE. operation
+- We are building this project because you build small concept and expand it to different things. 
+- focus only on Mongoose. 
+- create CRUD. 
+- Create a folder called models
+- We need to tell mongoose how does our data look like. 
+- Then, Mongoose will help us search, delete, and create new things. 
+
+## 7.0 How do you create a video model
+
+- Define the shape of the model: schema. 
+- 
+item.js
+
+```js
+import mongoose from "mongoose";
+
+
+// you can make the array of something - type string
+// hashtags, an array of String.
+// 
+const itemSchema = new mongoose.Schema({
+    title: String,
+    description: String,
+    createdAt: Date,
+    hashtags: [{ type: String }],
+    meta: {
+      views: Number,
+      rating: Number,
+    },
+})
+
+// name of the model and the schema, which you already created.
+
+const Video = mongoose.model("Video", videoSchema);
+export default Video;
+```
+
+After you are done describing the shape of an data, you import it to the server.js.
