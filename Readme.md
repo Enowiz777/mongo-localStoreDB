@@ -1,4 +1,4 @@
-# Grocery Data
+# LocalStoreDB
 
 20230208
 
@@ -635,3 +635,4 @@ export default Video;
 ```
 
 After you are done describing the shape of an data, you import it to the server.js.
+- Mongoose will validate the data as we describe the shape. We 
