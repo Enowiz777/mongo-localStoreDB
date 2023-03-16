@@ -604,7 +604,7 @@ mongoose.connect("mongodb://127.0.0.1:27017/wetube",
 - We need to tell mongoose how does our data look like. 
 - Then, Mongoose will help us search, delete, and create new things. 
 
-## 7.0 How do you create a video model
+## 6.10 How do you create a video model
 
 - Define the shape of the model: schema. 
 - 
@@ -636,3 +636,14 @@ export default Video;
 
 After you are done describing the shape of an data, you import it to the server.js.
 - Mongoose will validate the data as we describe the shape. We 
+
+## 6.11 Query
+
+- We defined the shape of the data and we created a model. 
+- Create a new file just to seperate. 
+- init.js (initialize everything)
+- Server: configuration, or express
+- Init: initize the server.
+
+*How do you query the data?*
+
