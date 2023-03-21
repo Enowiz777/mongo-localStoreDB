@@ -647,3 +647,58 @@ After you are done describing the shape of an data, you import it to the server.
 
 *How do you query the data?*
 
+03202023
+
+- Create a item shcema
+Location: src/models/items.js
+
+- Write a schema for item at the local store
+- Import`
+```js
+import mongoose from "mongoose";
+
+
+// you can make the array of something - type string
+// 
+const itemSchema = new mongoose.Schema({
+    title: String,
+    manufacturer: String,
+    distributer: String,
+    description: String,
+    createdAt: Date,
+    Count: String,
+    price: Number,
+})
+
+// parameter (name of the model, schema)
+const Item = mongoose.model("item", videoSchema);
+
+export default Item;
+
+
+```
+- We have to make db file aware that there is a video model.
+
+## 6.11 Our First Query
+
+- We are going to seperate init.js from server.js or app.js because server is setarting and importaing app. 
+- 
+
+*How do you access your DB?*
+
+Do the calculation from the Controller. 
+- impoty Item from the model. 
+- look at the Query documentation
+https://mongoosejs.com/docs/queries.html
+
+- It could be used as a calleback or a promise.
+- Callback is a way of waiting in the javascript. When we are connected, you want to fun the next function.
+- We have to wait for the data to come. We are communicating something outside the Javascript. 
+- You can use a callback or Promise
+
+*How do you use a callback?*
+```js
+export const home = (req, res) => {
+  Video.find({}, (error, videos) => {});
+  return res.render("home", { pageTitle: "Home" });
+```

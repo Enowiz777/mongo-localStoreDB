@@ -5,11 +5,16 @@ import mongoose from "mongoose";
 // 
 const itemSchema = new mongoose.Schema({
     title: String,
+    manufacturer: String,
+    distributer: String,
     description: String,
     createdAt: Date,
-    hashtags: [{ type: String }],
-    meta: {
-      views: Number,
-      rating: Number,
-    },
+    Count: String,
+    price: Number,
 })
+
+// parameter (name of the model, schema)
+const Item = mongoose.model("item", itemSchema);
+
+export default Item;
+
