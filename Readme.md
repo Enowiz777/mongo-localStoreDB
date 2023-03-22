@@ -702,3 +702,9 @@ export const home = (req, res) => {
   Video.find({}, (error, videos) => {});
   return res.render("home", { pageTitle: "Home" });
 ```
+
+- Callback is an old way of getting data.
+- Instead,k you can use teh promise.
+
+- To catch an error, you have to use try and catch.
+- 

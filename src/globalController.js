@@ -1,6 +1,9 @@
-import Item from "../models/Item";
+import Item from "./models/item"
 
-export const handleHome = (req, res) => 
-res.render("home", { pageTitle: "Home" });
-export const handleTest = (req, res) => 
-res.render("test");
+export const handleHome = async (req, res) => {
+    const items = await Item.find({});
+    console.log(items);
+    return res.render("home", { pageTitle: "Home", items });
+
+};
+export const handleTest = (req, res) => res.render("test");
