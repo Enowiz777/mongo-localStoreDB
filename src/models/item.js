@@ -9,7 +9,7 @@ const itemSchema = new mongoose.Schema({
     distributer: String,
     description: String,
     createdAt: Date,
-    Count: String,
+    count: String,
     price: Number,
 })
 

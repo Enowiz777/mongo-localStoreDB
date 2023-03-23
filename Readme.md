@@ -707,4 +707,30 @@ export const home = (req, res) => {
 - Instead,k you can use teh promise.
 
 - To catch an error, you have to use try and catch.
-- 
+
+# 6.12 Our First Query part Two
+
+# 6.13 Async Await
+
+# 6.14 Returns and Renders
+
+- If you render twice, it will be executed.
+- Express will show the error. 
+- Return will end an execution of the code.
+- Not about the return but it is about render. 
+- You cannot redirect and render at the same time. 
+
+videoController.js
+```js
+ const videos = await Video.find({});
+  return res.render("home", { pageTitle: "Home", videos });
+};
+```
+
+# 6.15 Creating a video
+
+- urlencoded need to be installed before you use the req.body
+- shortcut to creating a post and get route
+```js
+globalRouter.route("/").get(handleHome).post(handleAdd);
+```

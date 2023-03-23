@@ -1,8 +1,7 @@
 import express from "express";
-import { handleHome, handleTest } from "./globalController";
+import { handleHome, handleAdd } from "./globalController";
 const globalRouter = express.Router();
 
-globalRouter.get("/", handleHome);
-globalRouter.get("/test", handleTest);
+globalRouter.route("/").get(handleHome).post(handleAdd);
 
 export default globalRouter;
