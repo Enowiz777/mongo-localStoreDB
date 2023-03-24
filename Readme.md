@@ -734,3 +734,36 @@ videoController.js
 ```js
 globalRouter.route("/").get(handleHome).post(handleAdd);
 ```
+
+# 6.16 Creating video pt.2
+
+
+- We can make the addItem as async and await until the Video gets created.
+- You can either save the data using Model.create or Model.save
+- If you try to save the data with a wrong data type, you will not be able to save it because db will catch that error. Mongoose will match the data type with a model and sort out wrong information.
+
+# 6.17 Exception and Validation
+
+- If you don't send the date, it will create the DB data without an issue. 
+- In order to require users to include all data, you can make it required.
+- You can use try and catch to catch error messages. 
+
+- Schema can have a default value and we can make the value required by setting required attribute true.
+- 
+Video.js
+```js
+import mongoose from "mongoose";
+
+const videoSchema = new mongoose.Schema({
+  // required requires a value.
+  title: { type: String, required: true },
+  description: { type: String, required: true },
+  createdAt: { type: Date, required: true, default: Date.now },
+  // default: will set the default value.
+  hashtags: [{ type: String }],
+  meta: {
+    views: { type: Number, default: 0, required: true },
+    rating: { type: Number, default: 0, required: true },
+  },
+});
+```

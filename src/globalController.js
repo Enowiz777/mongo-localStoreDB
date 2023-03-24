@@ -9,9 +9,10 @@ export const handleHome = async (req, res) => {
     return res.render("home", { pageTitle: "Home", items });
 
 };
-export const handleAdd = (req, res) => 
+export const handleAdd = async (req, res) => 
 {
 
+// take the data from the req.body
 const { 
     title, 
     manufacturer, 
@@ -21,6 +22,8 @@ const {
     price,
 } = req.body;
 
+// make an item object and store Item data. Mongoose will validate the data shape or a schema. 
+/*
 const item = new Item({
     title: title,
     manufacturer: manufacturer,
@@ -30,7 +33,24 @@ const item = new Item({
     count: count,
     price: price,
 })
-console.log(item);
-return res.redirect("/");
+*/
+
+try {
+    await Item.create({
+        title: title,
+        manufacturer: manufacturer,
+        distributer: distributer,
+        description: description,
+        createdAt: Date.now(),
+        count: count,
+        price: price,
+    });
+    return res.redirect("/");
+    } catch (error) {
+        return res.render("/", {
+            pageTitle: "Home",
+            errorMessage: error._message,
+          });
+    }
 };
 // Upload data
