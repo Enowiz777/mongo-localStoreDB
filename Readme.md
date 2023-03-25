@@ -767,3 +767,42 @@ const videoSchema = new mongoose.Schema({
   },
 });
 ```
+
+## 6.18 Schema
+
+- You can add multiple attirbutes for schema.
+- you can call lowercase or uppercase
+- lowercase: true.
+- trim will trim the spaces in behind and front.
+- minLength, maxLength.
+- 
+```
+
+```
+- Enforce data from both the front and the backend.
+- 
+
+## 6.19 Detail page. 
+- In the detail page, you are viewing the data in a close up. 
+- regular expression
+- /[0-9a-f]{24}/g
+- any characters or number with length 24
+- We can use that on the Router and add the detail page. 
+- Use findOne(): findbyId - will find by ID
+- Once video is found, you can send the data into the item page and you can display the details as you would like. 
+- 
+
+## 6.20 Create an edit page.
+- You can create an edit page that contains ways to edit. 
+- Find one and send the id
+- Get the inputs -> modify the one that has a specific id.
+- 
+
+*How do you handle some users that attempt to get into the item detail page with id that doesn't eixst?*
+- If you don't take care of this, it will continue load in the backend. (NOT GOOD)
+- When you test, you have to test many cases.
+- What if the video doesn't exist. 
+- You may need to modify the error message. 
+- you can handle the video not found. you can cretae 404 page and send the tittle with an error message. 
+- getEdit, postEdit (add the modified data and send user home.)
+- 

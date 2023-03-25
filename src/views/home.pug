@@ -11,3 +11,33 @@ block content
         input(placeholder="Price", required, type="number", name="count")
         input(placeholder="Count", required, type="text", name="price")
         input(type="submit", value="Add Item")
+    
+    if items 
+        table.table
+            thead
+                tr
+                    th(scope='col') Title
+                    th(scope='col') Manufacturer
+                    th(scope='col') Distributer
+                    th(scope='col') Description 
+                    th(scope='col') CreatedAt 
+                    th(scope='col') Price
+                    th(scope='col') Unit
+                    th(scope='col') Edit
+                    th(scope='col') Delete
+            tbody
+                each item in items
+                    tr
+                        th(scope='row') #{item.title}
+                        td #{item.manufacturer}
+                        td #{item.distributer}
+                        td #{item.description}
+                        td #{item.createdAt}
+                        td #{item.price}
+                        td #{item.count}
+                        td 
+                            button.btn.btn-lg.btn-primary(type='button' active='') Edit
+                        td 
+                            button.btn.btn-lg.btn-danger(type='button' active='') Delete
+
+                        
