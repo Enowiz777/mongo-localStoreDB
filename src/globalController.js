@@ -9,6 +9,8 @@ export const handleHome = async (req, res) => {
     return res.render("home", { pageTitle: "Home", items });
 
 };
+
+// Handle the addition for the POST request to HOME.
 export const handleAdd = async (req, res) => 
 {
 
@@ -53,4 +55,9 @@ try {
           });
     }
 };
-// Upload data
+// Handle Edit
+
+export const handleEdit = async (req, res) => {
+    console.log(req.params);
+    return res.render("edit", { pageTitle: "Edit"});
+}
