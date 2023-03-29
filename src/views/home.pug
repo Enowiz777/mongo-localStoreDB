@@ -13,9 +13,10 @@ block content
         input(type="submit", value="Add Item")
     
     if items 
-        table.table.mx-2
+         table.table.table-hover.table-responsive
             thead
                 tr
+                    th(scope='col') ID
                     th(scope='col') Title
                     th(scope='col') Manufacturer
                     th(scope='col') Distributer
@@ -28,7 +29,13 @@ block content
             tbody
                 each item in items
                     tr
-                        th(scope='row') #{item.title}
+                        script.
+                            function myFunction() {
+                            const var1 = #{item.id}
+                            return "location.href='https://google.com';";
+                            }
+                        th(scope='row') #{item.id}
+                        th #{item.title}
                         td #{item.manufacturer}
                         td #{item.distributer}
                         td #{item.description}
@@ -36,8 +43,7 @@ block content
                         td #{item.price}
                         td #{item.count}
                         td 
-                            button.btn.btn-lg.btn-primary(type='button' active='') Edit
+                            a.btn.btn-lg.btn-primary(href=`/${item.id}/edit` role='button') Edit
                         td 
                             button.btn.btn-lg.btn-danger(type='button' active='') Delete
-
                         
