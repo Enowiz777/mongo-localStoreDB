@@ -806,3 +806,6 @@ const videoSchema = new mongoose.Schema({
 - you can handle the video not found. you can cretae 404 page and send the tittle with an error message. 
 - getEdit, postEdit (add the modified data and send user home.)
 - 
+
+20230329
+- 

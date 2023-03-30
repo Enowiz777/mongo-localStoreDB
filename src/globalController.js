@@ -60,12 +60,18 @@ export const getEdit = async (req, res) => {
     // get Id from params
     const { Id } = req.params;
     // find the item with the id
-    const item = await Item.findById(Id).exec();
-    console.log(item);
-    
+    let item;
+    if (Id.match(/^[0-9a-fA-F]{24}$/)) {
+        item = await Item.findOne({ _id: Id })
+    } else {
+        return res.render("404", { pageTitle: "Video not found." });
+    }
 
+    if (!item){
+        return res.render("404", { pageTitle: "Video not found." });
+    } 
 
-      return res.render("edit", { pageTitle: `Edit: ${video.title}`, item });
+    return res.render("edit", { pageTitle: `Edit:`, item });
 }
 
 export const postEdit = async (req, res) =>  {

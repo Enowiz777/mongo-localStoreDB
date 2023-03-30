@@ -4,4 +4,10 @@ html(lang="ko")
         title Wetube
     body
         h1 Edit
+        if item 
+            p=item.title
+            p=item.manufacturer
+            p=item.distributer
+            p=item.price
+            p=item.unit
     include partials/footer.pug
