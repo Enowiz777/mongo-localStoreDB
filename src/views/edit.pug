@@ -5,9 +5,11 @@ html(lang="ko")
     body
         h1 Edit
         if item 
-            p=item.title
-            p=item.manufacturer
-            p=item.distributer
-            p=item.price
-            p=item.unit
-    include partials/footer.pug
+            form(action=`/${item.id}/edit` method="POST")
+                input(placeholder=`${item.title}`, required, type="text", name="title")
+                input(placeholder=`${item.description}`, required, type="text", name="manufacturer")
+                input(placeholder=`${item.distributer}`, required, type="text", name="distributer")
+                input(placeholder=`${item.description}`, required, type="text", name="description")
+                input(placeholder=`${item.count}`, required, type="text", name="price")
+                input(placeholder=`${item.count}`, required, type="number", name="count")
+                input(type="submit", value="Update Item")

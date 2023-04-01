@@ -54,27 +54,64 @@ try {
           });
     }
 };
-// Handle Edit
+
+
+// Controller that handle Edit - PUT and POST.
 
 export const getEdit = async (req, res) => {
     // get Id from params
     const { Id } = req.params;
-    // find the item with the id
-    let item;
+    // item data variable.
+    let item; 
+
+    // validate ID string.
     if (Id.match(/^[0-9a-fA-F]{24}$/)) {
+        // find the item with the Id
         item = await Item.findOne({ _id: Id })
     } else {
         return res.render("404", { pageTitle: "Video not found." });
     }
 
+    // If item is not found with the ID, return the 404 page.
     if (!item){
         return res.render("404", { pageTitle: "Video not found." });
     } 
-
     return res.render("edit", { pageTitle: `Edit:`, item });
 }
 
 export const postEdit = async (req, res) =>  {
     // get the Id from the param
-    const { id } = req.params;
+    const { Id } = req.params;
+    
+    // get the inputs that users typed
+    const { 
+        title, 
+        manufacturer, 
+        distributer, 
+        description,
+        count,
+        price,
+    } = req.body;
+
+    // create a filter and update
+    const filter = { _id: Id};
+    const update = { 
+        title: title,
+        manufacturer: manufacturer,
+        distributer: distributer,
+        description: description,
+        count: count,
+        price: price,
+    };
+
+    // You should set the new option to true to return the document after update was applied.
+    try {
+        await Item.findOneAndUpdate( filter, update, {
+            new: true
+        });
+    } catch (error) {
+        console.log("error:", error);
+    }
+
+    return res.redirect("/");
 }
