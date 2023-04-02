@@ -115,3 +115,23 @@ export const postEdit = async (req, res) =>  {
 
     return res.redirect("/");
 }
+
+// Delete Controller - POST and GET
+
+export const postDelete = async (req, res) =>  {
+
+    // get id
+    const { Id } = req.params;
+    let itemDeleted;
+
+    // validate ID string.
+    if (Id.match(/^[0-9a-fA-F]{24}$/)) {
+        // delete a record from the DB.
+        itemDeleted = await Item.findByIdAndDelete(Id);
+        console.log(itemDeleted);
+    } else {
+        return res.render("404", { pageTitle: "Video not found." });
+    }
+
+    return res.redirect("/");
+}

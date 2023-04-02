@@ -3,6 +3,9 @@ extends base.pug
 block head
     title #{pageTitle} | Wetube
 block content
+
+    h1.headerText Input item details (CREATE)
+
     form(action="/" method="POST")
         input(placeholder="Title", required, type="text", name="title")
         input(placeholder="Manufacturer", required, type="text", name="manufacturer")
@@ -10,8 +13,12 @@ block content
         input(placeholder="Description", required, type="text", name="description")
         input(placeholder="Price", required, type="number", name="price")
         input(placeholder="Count", required, type="text", name="count")
-        input(type="submit", value="Add Item")
-    
+        input.btn.btn-primary.btn-lg(type="submit", value="Add Item")
+
+
+    h1.headerText View item(s) in the DB (READ)
+
+
     if items 
          table.table.table-hover.table-responsive
             thead
@@ -45,5 +52,6 @@ block content
                         td 
                             a.btn.btn-lg.btn-primary(href=`/${item.id}/edit` role='button') Edit
                         td 
-                            button.btn.btn-lg.btn-danger(type='button' active='') Delete
+                            form(action=`/${item.id}/delete` method='post')
+                                input.btn.btn-lg.btn-danger.btn-block(type='submit' value='Delete')
                         
