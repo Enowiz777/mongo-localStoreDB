@@ -15,6 +15,13 @@ hr {
   border-top: 3px solid black;
 }
 
+/* button */
+
+button:focus {
+  background-color:black;
+  color: white;
+}
+
 /* Input CSS*/
 
 input {

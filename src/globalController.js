@@ -1,6 +1,13 @@
 import Item from "./models/item"
 
 
+export const sortRoute = async (req, res) => {
+    const items = await Item.find({}).sort('title');
+    return res.render("home", { pageTitle: "Home", items });
+
+};
+
+
 // Find the item from the DB and return the Data.
 // Send the data to views.
 export const handleHome = async (req, res) => {
