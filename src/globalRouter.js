@@ -6,7 +6,7 @@ const globalRouter = express.Router();
 globalRouter.route("/").get(handleHome).post(handleAdd);
 globalRouter.route('/:Id/edit').get(getEdit).post(postEdit);
 globalRouter.route('/:Id/delete').post(postDelete);
-globalRouter.route('/sort').get(sortRoute);
+globalRouter.route('/:Id').get(sortRoute);
 
 
 export default globalRouter;

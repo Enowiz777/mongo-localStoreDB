@@ -2,15 +2,14 @@ import mongoose from "mongoose";
 
 
 // you can make the array of something - type string
-// 
 const itemSchema = new mongoose.Schema({
     title: String,
     manufacturer: String,
     distributer: String,
     description: String,
     createdAt: Date,
-    count: String,
-    price: Number,
+    price: mongoose.SchemaTypes.Decimal128,
+    unit: String,
 })
 
 // parameter (name of the model, schema)

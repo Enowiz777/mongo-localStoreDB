@@ -2,7 +2,9 @@ import Item from "./models/item"
 
 
 export const sortRoute = async (req, res) => {
-    const items = await Item.find({}).sort('title');
+    let url = req._parsedUrl.pathname;
+    let result = url.substring(1, url.length);
+    const items = await Item.find({}).sort(result);
     return res.render("home", { pageTitle: "Home", items });
 
 };
@@ -26,8 +28,8 @@ const {
     manufacturer, 
     distributer, 
     description,
-    count,
     price,
+    unit,
 } = req.body;
 
 // make an item object and store Item data. Mongoose will validate the data shape or a schema. 
@@ -50,11 +52,12 @@ try {
         distributer: distributer,
         description: description,
         createdAt: Date.now(),
-        count: count,
         price: price,
+        unit: unit,
     });
     return res.redirect("/");
     } catch (error) {
+        console.log(error);
         return res.render("/", {
             pageTitle: "Home",
             errorMessage: error._message,
@@ -96,8 +99,8 @@ export const postEdit = async (req, res) =>  {
         manufacturer, 
         distributer, 
         description,
-        count,
         price,
+        unit,
     } = req.body;
 
     // create a filter and update
@@ -107,8 +110,8 @@ export const postEdit = async (req, res) =>  {
         manufacturer: manufacturer,
         distributer: distributer,
         description: description,
-        count: count,
         price: price,
+        unit: unit,
     };
 
     // You should set the new option to true to return the document after update was applied.

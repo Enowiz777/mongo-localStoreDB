@@ -16,10 +16,8 @@ hr {
 }
 
 /* button */
-
-button:focus {
-  background-color:black;
-  color: white;
+button:active {
+  background-color: black;
 }
 
 /* Input CSS*/
