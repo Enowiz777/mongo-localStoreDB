@@ -1,5 +1,12 @@
 import Item from "./models/item"
 
+export const searchRoute = async (req, res) =>{
+    // console.log(req);
+    const query = req.query.search;
+    const items = await Item.find({ title: query});
+    return res.render("home", { pageTitle: "Home", items });
+
+};
 
 export const sortRoute = async (req, res) => {
     let url = req._parsedUrl.pathname;

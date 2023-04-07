@@ -9,22 +9,22 @@ block content
         form(action=`/${item.id}/edit` method="POST")
             div
                 label(for='html') Title
-                input(placeholder=`${item.title}`, required, type="text", name="title")
+                input(value=`${item.title}`, required, type="text", name="title")
             div
                 label(for='html') Manufacturer
-                input(placeholder=`${item.manufacturer}`, required, type="text", name="manufacturer")
+                input(value=`${item.manufacturer}`, required, type="text", name="manufacturer")
             div
                 label(for='html') Distributor
-                input(placeholder=`${item.distributer}`, required, type="text", name="distributer")
+                input(value=`${item.distributer}`, required, type="text", name="distributer")
             div
                 label(for='html') Description
-                input(placeholder=`${item.description}`, required, type="text", name="description")
+                input(value=`${item.description}`, required, type="text", name="description")
             div
                 label(for='html') Price
-                input(placeholder=`${item.price}`, required, type="text", name="price")
+                input(value=`${item.price}`, required, type="decimal", name="price")
             div 
                 label(for='html') Unit
-                input(placeholder=`${item.count}`, required, type="number", name="count")
+                input(value=`${item.unit}`, required, type="text", name="unit")
             div 
                 label(for='html')
                 input(type="submit", value="Update Item")
