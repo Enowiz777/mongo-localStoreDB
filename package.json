@@ -8,6 +8,8 @@
     "url": "git+https://github.com/Enowiz777/grocery-data.git"
   },
   "scripts": {
+    "start": "node build/init.js",
+    "build:server": "babel src -d build",
     "win": "node index.js",
     "dev": "nodemon --exec babel-node src/init.js"
   },
@@ -25,7 +27,8 @@
     "pug": "^3.0.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.12",
+    "@babel/cli": "^7.21.0",
+    "@babel/core": "^7.21.4",
     "@babel/node": "^7.20.7",
     "@babel/preset-env": "^7.20.2",
     "nodemon": "^2.0.20"

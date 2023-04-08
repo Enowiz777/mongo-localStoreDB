@@ -807,5 +807,27 @@ const videoSchema = new mongoose.Schema({
 - getEdit, postEdit (add the modified data and send user home.)
 - 
 
-20230329
+20230406
+
+- We are going to deploy to Heroku
+- We have to create a production environment. 
+- We need to build and minify the code. 
+- Babel-node is only meant to run it on the dev environment because 
+
+- Install Babel CLI
+```js
+npm install --save-dev @babel/core @babel/cli
+```
+
+- create a build server script
+- We are going to build a src/init.js -d (directory) where does the build code going to go?
+
+- run a build script that build the whole src directory. 
+- When you look into the build folder, you see that everything is a compatible javascript.
+- run on the start script. 
+- IF the views folder doesn't exist, how can you see the changes or the data. 
+- Build backend is going to src and see the 
+- We are going to build a client code and make it for production. We have to compress the code. 
+- There are some work to do with the CSS / webpack but I am going to skip it for now. 
+- Just move directly to Heroku deployment and see what happens. 
 - 
