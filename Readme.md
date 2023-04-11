@@ -842,3 +842,6 @@ npm install --save-dev @babel/core @babel/cli
 ```js
 heroku logs --tail
 ```
+- heroku tries to run node build/init.js
+- It cannot find init.js.
+- heroku does not give us 4000. We have to connect the port that Heroku gives us.
