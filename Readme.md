@@ -831,3 +831,14 @@ npm install --save-dev @babel/core @babel/cli
 - There are some work to do with the CSS / webpack but I am going to skip it for now. 
 - Just move directly to Heroku deployment and see what happens. 
 - 
+
+20230410
+
+# Deployment
+
+- once you create a remote place to push your code.
+- You have to commit in order for heroku to see your folder.
+- view the server in a real time
+```js
+heroku logs --tail
+```
