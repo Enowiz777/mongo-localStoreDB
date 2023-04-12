@@ -1,3 +1,9 @@
+
+// .env variables are read.
+const dotenv = require("dotenv");
+dotenv.config();
+console.log(process.env.TEST);
+
 // connect to mongoDB
 import "./db";
 

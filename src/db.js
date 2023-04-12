@@ -1,5 +1,9 @@
 import mongoose from "mongoose";
 
+// READ .env variable
+const dotenv = require("dotenv");
+dotenv.config();
+
 // connect to the local mongo dbs.
 mongoose.connect(process.env.DB_URL,
 {
